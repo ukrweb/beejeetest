@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo $this->config['project_name']; ?></title>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/dataTables.bootstrap4.min.css"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <div class="container">
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+       <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+         <a class="nav-link" href="<?php echo $this->basePath; ?>">Tasks list</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="<?php echo $this->basePath; ?>task/add">Add Task</a>
+        </li>
+       </ul>
+       <ul class="navbar-nav mr-right">
+        <li class="nav-item">
+<?php if (isset($this->isAdmin) && $this->isAdmin) { ?>
+         <a class="nav-link" href="<?php echo $this->basePath; ?>admin/logout">Logout [Admin]</a>
+<?php } else { ?>
+         <a class="nav-link" href="<?php echo $this->basePath; ?>admin">Login</a>
+<?php } ?>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </nav>
+
+    <div class="container">
+      <div class="starter-template">

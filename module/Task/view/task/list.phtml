@@ -1,0 +1,42 @@
+﻿        <h1>Task list</h1>
+
+        <div class="mb-3"></div>
+        <table id="task_list"class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Comments</th>
+              <th scope="col">Image</th>
+              <th scope="col">Status</th>
+<?php if (isset($this->isAdmin) && $this->isAdmin) { ?>
+              <th scope="col">Action</th>
+<?php } else { ?>
+              <th></th>
+<?php } ?>
+            </tr>
+          </thead>
+          <tbody>
+<?php foreach ($tasks as $task) { ?>
+            <tr>
+              <th scope="row"><?php echo $task->id ?? $task->id; ?></th>
+              <td><?php echo $task->username ?? ''; ?></td>
+              <td><?php echo $task->email ?? ''; ?></td>
+              <td><?php echo $task->comments ?? ''; ?></td>
+              <td><img src="img/<?php echo !empty($task->image) ? $task->image : 'placeholder.jpg'; ?>" alt="no image" /></td>
+<?php if (isset($task->status) && $task->status) { ?>
+              <td><div class="alert alert-success col" role="alert">completed</div></td>
+<?php } else {?>
+              <td><div class="alert alert-danger" role="alert">not completed</div></td>
+<?php } ?>
+<?php if (isset($this->isAdmin) && $this->isAdmin) { ?>
+              <td><a href="<?php echo $this->basePath; ?>task/edit/<?php echo $task->id; ?>">Edit</a></td>
+<?php } else { ?>
+              <td></td>
+<?php } ?>
+            </tr>
+<?php } ?>
+          </tbody>
+        </table>
+        <div class="mb-3"></div>

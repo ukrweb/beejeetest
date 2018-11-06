@@ -1,0 +1,22 @@
+{
+    "name": "beejee/test",
+    "description": "Task book application",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Yuriy Ovcharenko",
+            "email": "ovcharenkoyv@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Core\\" : "core/",
+            "Application\\" : "module/Application/",
+            "Task\\" : "module/Task/",
+            "Admin\\" : "module/Admin/"
+        }
+    }
+}

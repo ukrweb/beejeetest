@@ -1,0 +1,39 @@
+﻿        <h1>Edit task</h1>
+
+        <div class="col-md-8 order-md-1">
+          <h1 class="mb-3"></h1>
+          <form action="<?php echo $this->basePath; ?>task/edit" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="username">Username: <?php echo $task->username; ?></label>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email: <?php echo $task->email; ?></label>
+            </div>
+
+            <div class="mb-3">
+              <label for="comments">Comments</label>
+              <textarea class="form-control" id="comments" name="comments" required><?php echo $task->comments; ?></textarea>
+              <div class="invalid-feedback">
+              Please enter task comment.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="image">Image fo task:</label>
+              <img src="../../img/<?php echo !empty($task->image) ? $task->image : 'placeholder.jpg'; ?>" alt="no image" />
+            </div>
+            
+            <hr class="mb-4">
+
+            <div class="custom-control custom-checkbox">
+             <input type="checkbox" class="custom-control-input" id="status" name="status" <?php echo !$task->status ?: 'checked'; ?>>
+             <label class="custom-control-label" for="status">Task completed</label>
+            </div>
+
+            <hr class="mb-4">
+
+            <input type="hidden" name="id" value="<?php echo $task->id; ?>" />
+            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit_update_task" value="Update" >Update Task</button>
+          </form>
+        </div>

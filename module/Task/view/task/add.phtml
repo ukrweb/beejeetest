@@ -1,0 +1,39 @@
+﻿        <h1>Add task</h1>
+
+        <div class="col-md-8 order-md-1">
+          <h1 class="mb-3"></h1>
+          <form action="<?php echo $this->basePath; ?>task/add" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="username">Username</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                 Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+              <div class="invalid-feedback">
+              Please enter a valid email address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="comments">Comments</label>
+              <textarea class="form-control" id="comments" name="comments" required></textarea>
+              <div class="invalid-feedback">
+              Please enter task comment.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="image">Image fo task</label>
+              <input type="file" class="form-control" id="image" name="image">
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit_add_task" value="Submit" >Add Task</button>
+          </form>
+        </div>
