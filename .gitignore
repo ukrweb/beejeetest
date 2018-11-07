@@ -2,3 +2,4 @@
 /.buildpath
 /.project
 /logs/
+/_install/04-insert-demo-data-into-table-task.sql

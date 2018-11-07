@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/dataTables.bootstrap4.min.css"/>
+<?php if (isset($view) && $view == 'task/add') { ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->basePath; ?>css/task-add.css"/>
+<?php } ?>
   </head>
 
   <body>
@@ -14,10 +17,10 @@
       <div class="collapse navbar-collapse" id="navbarsExample07">
        <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-         <a class="nav-link" href="<?php echo $this->basePath; ?>">Tasks list</a>
+         <a class="nav-link" href="<?php echo $this->basePath; ?>">Task list</a>
         </li>
         <li class="nav-item">
-         <a class="nav-link" href="<?php echo $this->basePath; ?>task/add">Add Task</a>
+         <a class="nav-link" href="<?php echo $this->basePath; ?>task/add">Task Add</a>
         </li>
        </ul>
        <ul class="navbar-nav mr-right">

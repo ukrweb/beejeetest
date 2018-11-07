@@ -1,4 +1,4 @@
-﻿        <h1>Add task</h1>
+﻿        <h1>Task add</h1>
 
         <div class="col-md-8 order-md-1">
           <h1 class="mb-3"></h1>
@@ -7,26 +7,20 @@
               <label for="username">Username</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                 Your username is required.
-                </div>
+                <div class="invalid-feedback" style="width: 100%;">Your username is required.</div>
               </div>
             </div>
 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted"></span></label>
               <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
-              <div class="invalid-feedback">
-              Please enter a valid email address.
-              </div>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
             </div>
 
             <div class="mb-3">
               <label for="comments">Comments</label>
-              <textarea class="form-control" id="comments" name="comments" required></textarea>
-              <div class="invalid-feedback">
-              Please enter task comment.
-              </div>
+              <textarea class="form-control" id="comments" name="comments"></textarea>
+              <div class="invalid-feedback">Please enter task comment.</div>
             </div>
 
             <div class="mb-3">
@@ -34,6 +28,48 @@
               <input type="file" class="form-control" id="image" name="image">
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit_add_task" value="Submit" >Add Task</button>
+            <button class="btn btn-primary" type="submit" name="submit_add_task" value="Submit" >Add Task</button>
+            <button id="preview" name="preview" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">Preview</button>
           </form>
+        </div>
+
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Task Preview</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <table id="taskPreview" class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">User Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Comments</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span id="usernamePreview"></span></td>
+                      <td><span id="emailPreview"></span></td>
+                      <td><span id="commentsPreview"></span></td>
+                      <td><img id="imagePreview" class="image-preview" src="../../img/placeholder.jpg"/></td>
+                      <td><span class="badge badge-warning">Not completed</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="mb-3"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>

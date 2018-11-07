@@ -1,4 +1,4 @@
-﻿        <h1>Edit task</h1>
+﻿        <h1>Task edit</h1>
 
         <div class="col-md-8 order-md-1">
           <h1 class="mb-3"></h1>
@@ -23,7 +23,7 @@
               <label for="image">Image fo task:</label>
               <img src="../../img/<?php echo !empty($task->image) ? $task->image : 'placeholder.jpg'; ?>" alt="no image" />
             </div>
-            
+
             <hr class="mb-4">
 
             <div class="custom-control custom-checkbox">
@@ -34,6 +34,6 @@
             <hr class="mb-4">
 
             <input type="hidden" name="id" value="<?php echo $task->id; ?>" />
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit_update_task" value="Update" >Update Task</button>
+            <button class="btn btn-primary" type="submit" name="submit_update_task" value="Update" >Update Task</button>
           </form>
         </div>

@@ -6,5 +6,9 @@
   <script type="text/javascript" src="<?php echo $this->basePath; ?>js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="<?php echo $this->basePath; ?>js/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo $this->basePath; ?>js/datatables.min.js"></script>
-  <script type="text/javascript" src="<?php echo $this->basePath; ?>js/beejeetest.js"></script>
+<?php if (isset($view) && $view == 'task/list') { ?>
+  <script type="text/javascript" src="<?php echo $this->basePath; ?>js/task-list.js"></script>
+<?php } elseif ($view == 'task/add') { ?>
+  <script type="text/javascript" src="<?php echo $this->basePath; ?>js/task-add.js"></script>
+<?php } ?>
 </html>

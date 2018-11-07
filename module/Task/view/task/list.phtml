@@ -1,7 +1,7 @@
 ﻿        <h1>Task list</h1>
 
         <div class="mb-3"></div>
-        <table id="task_list"class="table table-hover">
+        <table id="task_list" class="table table-hover">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -26,9 +26,9 @@
               <td><?php echo $task->comments ?? ''; ?></td>
               <td><img src="img/<?php echo !empty($task->image) ? $task->image : 'placeholder.jpg'; ?>" alt="no image" /></td>
 <?php if (isset($task->status) && $task->status) { ?>
-              <td><div class="alert alert-success col" role="alert">completed</div></td>
+              <td><span class="badge badge-success">Completed</span></td>
 <?php } else {?>
-              <td><div class="alert alert-danger" role="alert">not completed</div></td>
+              <td><span class="badge badge-warning">Not completed</span></td>
 <?php } ?>
 <?php if (isset($this->isAdmin) && $this->isAdmin) { ?>
               <td><a href="<?php echo $this->basePath; ?>task/edit/<?php echo $task->id; ?>">Edit</a></td>
